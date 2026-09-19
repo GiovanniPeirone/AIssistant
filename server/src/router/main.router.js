@@ -1,7 +1,8 @@
-const express = require("express");
-const Router = express.Router();
+import express from "express";
+const r = express.Router();
 
+import chatRouter from "./chat.router.js";
 
+r.use("/chat", chatRouter);
 
-
-module.exports = Router
+export default r

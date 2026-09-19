@@ -1,12 +1,12 @@
-const express = require("express");
+import express from "express"; 
+
+import { askController } from "../controller/chat.controller.js";
+
 const r = express.Router();
 
-askQwen
 
-r.get("/chat")
-r.post("/chat/ask")
-r.get("/chat/response/:id")
+r.post("/ask", askController);
+//r.get("/response/:id");
 
 
-
-module.exports = r
+export default r;

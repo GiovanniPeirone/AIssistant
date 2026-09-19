@@ -1,18 +1,18 @@
-const express = require("express");
-const cors = require("cors")
+import express from "express";
+import cors from "cors";
 
-const mainRouter = require("./router/main.router")
+import mainRouter from "./router/main.router.js";
 
 const app = express();
 const PORT = 3000;
 
-app.use(cors())
+app.use(cors());
 app.use(express.json())
 
-app.use("/", mainRouter)
+app.use(mainRouter);
 
 app.listen(PORT, () => {
     console.log("App running in", PORT)
-})
+});
 
 

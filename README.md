@@ -7,3 +7,7 @@ my own AI assistant
 
 # workflow
 <img src="./media/workflow.png">
+
+
+# server 
+http://localhost:3000/chat/ask

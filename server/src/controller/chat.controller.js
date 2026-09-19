@@ -1,19 +1,26 @@
-const express = require("express")
-
+import askQwen from "../service/qwenModel.js";
 
 /**
- * @param { express.Request } req
- * @param { express.Response } res
+ * @param { import("express").Request } req
+ * @param { import("express").Response } res
  * */
-const ask = async (req, res) => {
-  const {} = req.body;  
- 
-  res.status(202).json({
-    msg : "hola?"
-  })
-}
+export const askController = async (req, res) => {
+  try{
+    const {
+      question 
+    } = req.body;  
 
-module.exports = {
-  ask,
+    const response = await askQwen(question);
+
+    res.status(200).json({
+      msg : response
+    });
+
+  }catch (err){
+    res.status(500).json({
+      error : " Error processing queetion"
+    })
+  }
+  
 }
 
